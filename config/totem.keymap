@@ -177,8 +177,8 @@ bindings = <
 ARROW_layer {
 label= "ARROW";
 bindings = <
-           &none         &none         &none      &none           &none            &kp HOME       &kp PAGE_UP  &kp UP      &kp PAGE_DOWN  &kp NON_US_BACKSLASH  &none
-&none      &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &none            &kp END        &kp LEFT     &kp DOWN    &kp RIGHT      &kp APOSTROPHE        &none
+           &none         &none         &none      &none           &none            &kp HOME       &kp PAGE_UP  &kp UP      &kp PAGE_DOWN  &kp NON_US_BACKSLASH  
+           &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &none            &kp END        &kp LEFT     &kp DOWN    &kp RIGHT      &kp APOSTROPHE        
 &kp LC(Y)  &kp LC(Z)     &kp LC(X)     &kp LC(C)  &kp LC(V)       &kp LA(LC(V))    &kp LC(LA(V))  &kp LC(V)    &kp LC(C)   &kp LC(X)      &kp LC(Z)             &kp LC(Y)
                                        &none      &none           &none            &none          &none        &kp DELETE
                         >;
@@ -217,9 +217,9 @@ label= "SYM";
 FN_layer {
 label= "FN";
  bindings = <
-       &none  &kp F7  &kp F8  &kp F9  &kp F10    &none  &kp F7  &kp F8  &kp F9  &kp F10
-&none  &none  &kp F4  &kp F5  &kp F6  &kp F11    &none  &kp F4  &kp F5  &kp F6  &kp F11  &none
-&none  &none  &kp F1  &kp F2  &kp F3  &kp F12    &none  &kp F1  &kp F2  &kp F3  &kp F12  &none
+       &none  &kp F7  &kp F8  &kp F9  &kp F10    &kp F7  &kp F8  &kp F9  &kp F10
+       &none  &kp F4  &kp F5  &kp F6  &kp F11    &kp F4  &kp F5  &kp F6  &kp F11
+&none  &none  &kp F1  &kp F2  &kp F3  &kp F12    &kp F1  &kp F2  &kp F3  &kp F12  &none
                       &none   &none   &none      &none  &none   &none
                         >;
                 };
