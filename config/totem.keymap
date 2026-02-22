@@ -57,10 +57,131 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        LSYSLD {
             timeout-ms = <50>;
+            key-positions = <34 4>;
+            bindings = <&tog 7>;
+        };
+
+        RSYSL {
+            bindings = <&tog 7>;
+            key-positions = <35 5>;
+            timeout-ms = <50>;
+        };
+
+        BT0 {
+            bindings = <&bt BT_SEL 0>;
+            key-positions = <5 35>;
+        };
+
+        BT1 {
+            bindings = <&bt BT_SEL 1>;
+            key-positions = <35 6>;
+        };
+
+        BT2 {
+            bindings = <&bt BT_SEL 2>;
+            key-positions = <35 7>;
+        };
+
+        BT3 {
+            bindings = <&bt BT_SEL 3>;
+            key-positions = <35 8>;
+        };
+
+        BT4 {
+            bindings = <&bt BT_SEL 4>;
+            key-positions = <9 35>;
+        };
+
+        HANGUL {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <27 26>;
+        };
+
+        HANJA {
+            bindings = <&kp RCTRL>;
+            key-positions = <28 27>;
+        };
+
+        TASKMGR {
+            bindings = <&kp LC(LS(ESCAPE))>;
+            key-positions = <10 21 0>;
+        };
+
+        COMBO_F2 {
+            bindings = <&kp F2>;
             key-positions = <0 1>;
-            bindings = <&kp ESC>;
+        };
+
+        ALFTF4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <1 2>;
+        };
+
+        COMBO_F5 {
+            bindings = <&kp F5>;
+            key-positions = <2 3>;
+        };
+
+        COMBO_MINUS {
+            bindings = <&kp MINUS>;
+            key-positions = <5 15>;
+        };
+
+        COMBO_UNDERSOCRE {
+            bindings = <&kp UNDER>;
+            key-positions = <6 16>;
+        };
+
+        COMBO_EQUAL {
+            bindings = <&kp EQUAL>;
+            key-positions = <17 7>;
+        };
+
+        COMBO_PLUS {
+            bindings = <&kp PLUS>;
+            key-positions = <18 8>;
+        };
+
+        COMBO_LPAR {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <3 13>;
+        };
+
+        COMBO_RPAR {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <4 14>;
+        };
+
+        COMBO_LBKT {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <11 1>;
+        };
+
+        COMBO_RBKT {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <2 12>;
+        };
+
+        COMBO_FIND {
+            bindings = <&kp LC(F)>;
+            key-positions = <12 13 14>;
+        };
+
+        COMBO_SAVE {
+            bindings = <&kp LC(S)>;
+            key-positions = <11 12>;
+        };
+
+        COMBO_TABCLOSE {
+            bindings = <&kp LC(W)>;
+            key-positions = <12 1>;
+        };
+
+        COMBO_SCREENSHOT {
+            bindings = <&kp LG(LS(S))>;
+            key-positions = <10 11 13>;
         };
     };
 
