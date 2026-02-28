@@ -64,12 +64,6 @@
             bindings = <&tog 7>;
         };
 
-        RSYSL {
-            bindings = <&tog 7>;
-            key-positions = <35 5>;
-            timeout-ms = <50>;
-        };
-
         BT0 {
             bindings = <&bt BT_SEL 0>;
             key-positions = <5 35>;
