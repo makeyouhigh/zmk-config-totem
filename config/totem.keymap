@@ -179,9 +179,24 @@
             key-positions = <10 11 13>;
         };
 
-        dddd {
+        COMBO_CAPSLOCK {
             bindings = <&kp CAPSLOCK>;
             key-positions = <28 29>;
+        };
+
+        BTCLR {
+            bindings = <&bt BT_CLR>;
+            key-positions = <35 19>;
+        };
+
+        FLUENT {
+            bindings = <&kp LC(LA(LS(SPACE)))>;
+            key-positions = <11 12 13 33>;
+        };
+
+        FLUENT_SHORTCUT {
+            bindings = <&kp LC(LA(LS(SPACE)))>;
+            key-positions = <11 12 13 25>;
         };
     };
 
