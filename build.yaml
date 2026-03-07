@@ -13,7 +13,7 @@ include:
 
   # 동글 + YADS 화면 버전 (USB + Screen)
   - board: seeeduino_xiao_ble
-    shield: totem_dongle dongle_screen
+    shield: totem_dongle
     cmake-args: >
       -DCONFIG_PM=n
       -DCONFIG_PM_DEVICE=n
