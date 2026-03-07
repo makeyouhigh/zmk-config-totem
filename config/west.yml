@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: makeyouhigh
+      url-base: https://github.com/makeyouhigh
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+    - name: zmk-dongle-screen
+      remote: makeyouhigh
+      revision: main
   self:
     path: config
