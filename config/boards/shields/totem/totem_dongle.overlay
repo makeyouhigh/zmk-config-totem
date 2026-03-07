@@ -3,7 +3,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zephyr,display = &st7789; /* 화면 출력 지정 */
+        zephyr,display = &st7789;
         wakeup-source;
     };
 
@@ -14,7 +14,6 @@
         events = <0>;
     };
 
-    /* 백라이트 설정 */
     pwmleds {
         compatible = "pwm-leds";
         disp_bl: pwm_led_1 {
@@ -26,7 +25,6 @@
 /* 물리 스캔 노드 완전 삭제 (col-gpios 에러 방지용) */
 /delete-node/ &kscan0;
 
-/* 하드웨어 핀 컨트롤 정의 */
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -44,34 +42,49 @@
     };
 };
 
-/* SPI 직결 방식으로 ST7789 노드 재배치 */
+/* 핵심 수정: mipi_dbi를 spi3 버스 내부로 이동하여 문법 에러 완벽 해결 */
 &spi3 {
     status = "okay";
     pinctrl-0 = <&spi3_default>;
     pinctrl-names = "default";
     cs-gpios = <&xiao_d 9 GPIO_ACTIVE_LOW>;
 
-    st7789: st7789v@0 {
-        compatible = "sitronix,st7789v";
-        spi-max-frequency = <30000000>;
+    mipi_dbi: mipi_dbi@0 {
+        compatible = "zephyr,mipi-dbi-spi";
         reg = <0>;
-        
-        /* MIPI-DBI 시절에 쓰던 핀들을 여기로 가져옵니다 */
+        spi-dev = <&spi3>;
+        spi-max-frequency = <30000000>; /* SPI 버스의 필수 속성 */
         dc-gpios = <&xiao_d 7 GPIO_ACTIVE_HIGH>;
         reset-gpios = <&xiao_d 3 GPIO_ACTIVE_LOW>;
-        
-        width = <240>; height = <280>;
-        x-offset = <0>; y-offset = <20>;
-        vcom = <0x19>; gctrl = <0x35>;
-        vrhs = <0x12>; vdvs = <0x20>;
-        mdac = <0x00>; gamma = <0x01>;
-        colmod = <0x05>; lcm = <0x2c>;
-        porch-param = [ 0c 0c 00 33 33 ];
-        cmd2en-param = [ 5a 69 02 01 ];
-        pwctrl1-param = [ a4 a1 ];
-        pvgam-param = [ D0 04 0D 11 13 2B 3F 54 4C 18 0D 0B 1F 23 ];
-        nvgam-param = [ D0 04 0C 11 13 2C 3F 44 51 2F 1F 1F 20 23 ];
-        ram-param = [ 00 F0 ]; rgb-param = [ CD 08 14 ];
+        write-only;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        st7789: st7789v@0 {
+            compatible = "sitronix,st7789v";
+            reg = <0>;
+            mipi-max-frequency = <30000000>;
+            mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+            width = <240>;
+            height = <280>;
+            x-offset = <0>;
+            y-offset = <20>;
+            vcom = <0x19>;
+            gctrl = <0x35>;
+            vrhs = <0x12>;
+            vdvs = <0x20>;
+            mdac = <0x00>;
+            gamma = <0x01>;
+            colmod = <0x05>;
+            lcm = <0x2c>;
+            porch-param = [ 0c 0c 00 33 33 ];
+            cmd2en-param = [ 5a 69 02 01 ];
+            pwctrl1-param = [ a4 a1 ];
+            pvgam-param = [ D0 04 0D 11 13 2B 3F 54 4C 18 0D 0B 1F 23 ];
+            nvgam-param = [ D0 04 0C 11 13 2C 3F 44 51 2F 1F 1F 20 23 ];
+            ram-param = [ 00 F0 ];
+            rgb-param = [ CD 08 14 ];
+        };
     };
 };
 
