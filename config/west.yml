@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: makeyouhigh
-      revision: main
+      revision: stable
   self:
     path: config
