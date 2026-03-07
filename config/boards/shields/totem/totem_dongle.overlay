@@ -18,4 +18,6 @@
         rows = <0>;
         events = <0>;
     };
+&kscan0 {
+    status = "disabled";
 };
