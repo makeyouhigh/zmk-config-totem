@@ -198,6 +198,11 @@
             bindings = <&kp LC(LA(LS(SPACE)))>;
             key-positions = <11 12 13 25>;
         };
+
+        BT_USB {
+            bindings = <&out OUT_TOG>;
+            key-positions = <4 34>;
+        };
     };
 
     HOME_ROW_R: HOME_ROW_R {
