@@ -203,6 +203,11 @@
             bindings = <&out OUT_TOG>;
             key-positions = <4 33>;
         };
+
+        COMBO_PAREN {
+            bindings = <&COMBO_PAREN>;
+            key-positions = <3 4>;
+        };
     };
 
     HOME_ROW_R: HOME_ROW_R {
@@ -311,6 +316,13 @@
                 <&kp LSHFT>,
                 <&macro_tap>,
                 <&kp G &kp I &kp F>;
+        };
+
+        COMBO_PAREN: COMBO_PAREN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "COMBO_PAREN";
         };
     };
 
