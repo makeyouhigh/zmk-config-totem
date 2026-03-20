@@ -2,19 +2,25 @@ include:
   # 좌측(Left) 빌드 - 슬레이브
   - board: seeeduino_xiao_ble
     shield: totem_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args:
+      -DCONFIG_ZMK_SPLIT=y
+      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+      -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
     artifact-name: totem-dongle-left
 
   # 우측(Right) 빌드 - 슬레이브
   - board: seeeduino_xiao_ble
     shield: totem_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args:
+      -DCONFIG_ZMK_SPLIT=y
+      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+      -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
     artifact-name: totem-dongle-right
 
   # 동글 + YADS 화면 버전 (USB + Screen)
   - board: seeeduino_xiao_ble
     shield: totem_dongle dongle_screen raw_hid_adapter
-    cmake-args: >
+    cmake-args: 
       -DCONFIG_PM=n
       -DCONFIG_PM_DEVICE=n
       -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=0
