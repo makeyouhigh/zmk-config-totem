@@ -18,7 +18,7 @@ include:
       -DCONFIG_PM=n
       -DCONFIG_PM_DEVICE=n
       -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=0
-      -DCONFIG_ZMK_STUDIO=n
+      -DCONFIG_ZMK_STUDIO=y
     artifact-name: totem-dongle-yads
 
   # 설정 초기화용 빌드
