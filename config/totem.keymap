@@ -202,6 +202,11 @@
             bindings = <&out OUT_TOG>;
             key-positions = <4 33>;
         };
+
+        winminimize {
+            bindings = <&winminimize>;
+            key-positions = <24 25>;
+        };
     };
 
     HOME_ROW_R: HOME_ROW_R {
