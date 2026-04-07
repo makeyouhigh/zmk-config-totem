@@ -42,3 +42,12 @@
             ;
     };
 };
+
+&gpio0 {
+    charge_100ma_hog {
+        gpio-hog;
+        gpios = <13 GPIO_ACTIVE_HIGH>;
+        output-low;    /* 부팅 즉시 강제로 P0.13을 LOW로 떨어뜨림 */
+        line-name = "Charge_100mA";
+    };
+};
