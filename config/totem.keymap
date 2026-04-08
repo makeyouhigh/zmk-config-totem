@@ -204,7 +204,7 @@
         };
 
         WINMINIMIZE {
-            bindings = <&winminimize>;
+            bindings = <&WINMINIMIZE>;
             key-positions = <24 25>;
         };
     };
@@ -312,7 +312,7 @@
     };
 
     macros {
-        winminimize: winminimize {
+        WINMINIMIZE: winminimize {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(SPACE) &kp N>;
