@@ -352,7 +352,7 @@
        &none  &none     &kp UP      &none      &none    &kp KP_DIVIDE    &kp N7        &kp N8        &kp N9        &kp KP_MINUS
        &none  &kp LEFT  &kp DOWN    &kp RIGHT  &none    &kp KP_ASTERISK  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_PLUS
 &none  &none  &none     &none       &none      &none    &kp COMMA        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL     &none
-                        &kp DELETE  &none      &none    &kp BACKSPACE    &kp DOT       &kp NUMBER_0
+                        &kp DELETE  &none      &none    &kp BACKSPACE    &kp N0        &kp DOT
             >;
         };
 
