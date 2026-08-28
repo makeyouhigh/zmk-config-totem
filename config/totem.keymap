@@ -200,7 +200,7 @@
 
         WINMINIMIZE {
             bindings = <&WINMINIMIZE>;
-            key-positions = <21 22>;
+            key-positions = <22 23>;
         };
 
         FS_SC_2 {
