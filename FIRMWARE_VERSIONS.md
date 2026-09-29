@@ -1,6 +1,14 @@
 # TOTEM-PLA 동글 없는 펌웨어
 
-현재 버전: v1
+현재 버전: v2 — AC Minimize HID 직접 전송 (2026-09-29)
+
+□ 기존 WINMINIMIZE와 X+C 콤보에서 Alt+Space → N을 제거하고 Consumer Usage 0x0206 한 개를 전송합니다. FULL 보고서를 명시했습니다. [사용법과 검증 한계](docs/hid-minimize.md).
+
+□ 왼쪽 중앙 장치 적용 대상입니다. 오른쪽 동작, TOTEM-PLA 이름, 연결 역할, 절전, 다른 키맵은 유지합니다. 설정 초기화는 필요하지 않습니다.
+
+□ 빌드와 산출물 검증: 진행 전. Windows 실기기 최소화 동작: 미확인.
+
+# 이전 버전 v1
 
 □ 기반: dongle 브랜치의 2b33e8f958b899b76ce141c9ddaf1fe494aa2e43. 새 브랜치는 codex/no-dongle입니다. 기존 dongle/master 브랜치는 변경하지 않았습니다.
 
