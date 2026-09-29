@@ -6,7 +6,7 @@ include:
       -DCONFIG_ZMK_SPLIT=y
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
       -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
-    artifact-name: totem-dongle-left-v1
+    artifact-name: totem-dongle-left
 
   # 우측(Right) 빌드 - 슬레이브
   - board: seeeduino_xiao_ble
@@ -15,7 +15,7 @@ include:
       -DCONFIG_ZMK_SPLIT=y
       -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
       -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
-    artifact-name: totem-dongle-right-v1
+    artifact-name: totem-dongle-right
 
   # 동글 + YADS 화면 버전 (USB + Screen)
   - board: seeeduino_xiao_ble
@@ -25,9 +25,9 @@ include:
       -DCONFIG_PM_DEVICE=n
       -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=0
       -DCONFIG_ZMK_STUDIO=n
-    artifact-name: totem-dongle-yads-v1
+    artifact-name: totem-dongle-yads
 
   # 설정 초기화용 빌드
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: totem-settings-reset-v1
+    artifact-name: totem-settings-reset
