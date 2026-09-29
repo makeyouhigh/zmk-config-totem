@@ -6,7 +6,9 @@
 
 □ 왼쪽 중앙 장치 적용 대상입니다. 오른쪽 동작, TOTEM-PLA 이름, 연결 역할, 절전, 다른 키맵은 유지합니다. 설정 초기화는 필요하지 않습니다.
 
-□ 빌드와 산출물 검증: 진행 전. Windows 실기기 최소화 동작: 미확인.
+□ 검증: [GitHub Actions 36530795809](https://github.com/makeyouhigh/zmk-config-totem/actions/runs/36530795809)의 전체 빌드 및 산출물 통합 성공. 소스 커밋 347b224fc9c17b253f12711da245115c364d83fd. 중앙 장치의 FULL Consumer 보고서, 실제 전처리된 단일 0x0C0206 바인딩과 40ms 눌림·해제, UF2 내부 코드와 ZIP/블록/nRF52840 기종을 확인했습니다. Windows 실기기 최소화 동작은 미확인입니다.
+
+□ ZIP SHA256: f0d48a4fc87ff6b7e47a98772f72009ec86e00e07fc2a296ef3080b4f7bf1119. 오른쪽 산출물은 v1과 바이트 전체가 동일하여 다시 적용할 필요가 없습니다.
 
 # 이전 버전 v1
 
