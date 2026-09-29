@@ -2,14 +2,14 @@ include:
   # 왼쪽이 PC에 BLE/USB로 직접 연결되는 중앙 장치입니다.
   - board: seeeduino_xiao_ble
     shield: totem_left
-    artifact-name: totem-no-dongle-left-v2
+    artifact-name: totem-no-dongle-left-v1
 
   # 오른쪽은 왼쪽에 BLE로 연결됩니다.
   - board: seeeduino_xiao_ble
     shield: totem_right
-    artifact-name: totem-no-dongle-right-v2
+    artifact-name: totem-no-dongle-right-v1
 
   # 동글 구성에서 처음 전환할 때 기존 페어링을 지우는 용도입니다.
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: totem-no-dongle-settings-reset-v2
+    artifact-name: totem-no-dongle-settings-reset-v1
