@@ -1,33 +1,15 @@
 include:
-  # 좌측(Left) 빌드 - 슬레이브
+  # 왼쪽이 PC에 BLE/USB로 직접 연결되는 중앙 장치입니다.
   - board: seeeduino_xiao_ble
     shield: totem_left
-    cmake-args:
-      -DCONFIG_ZMK_SPLIT=y
-      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-      -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
-    artifact-name: totem-dongle-left
+    artifact-name: totem-no-dongle-left-v1
 
-  # 우측(Right) 빌드 - 슬레이브
+  # 오른쪽은 왼쪽에 BLE로 연결됩니다.
   - board: seeeduino_xiao_ble
     shield: totem_right
-    cmake-args:
-      -DCONFIG_ZMK_SPLIT=y
-      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-      -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=n
-    artifact-name: totem-dongle-right
+    artifact-name: totem-no-dongle-right-v1
 
-  # 동글 + YADS 화면 버전 (USB + Screen)
-  - board: seeeduino_xiao_ble
-    shield: totem_dongle dongle_screen raw_hid_adapter
-    cmake-args: 
-      -DCONFIG_PM=n
-      -DCONFIG_PM_DEVICE=n
-      -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=0
-      -DCONFIG_ZMK_STUDIO=n
-    artifact-name: totem-dongle-yads
-
-  # 설정 초기화용 빌드
+  # 동글 구성에서 처음 전환할 때 기존 페어링을 지우는 용도입니다.
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: totem-settings-reset
+    artifact-name: totem-no-dongle-settings-reset-v1
