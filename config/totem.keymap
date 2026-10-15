@@ -65,27 +65,27 @@
 
         BT0 {
             bindings = <&out OUT_TOG>;
-            key-positions = <5 36>;
+            key-positions = <5 35>;
         };
 
         BT1 {
             bindings = <&bt BT_SEL 0>;
-            key-positions = <6 36>;
+            key-positions = <6 35>;
         };
 
         BT2 {
             bindings = <&bt BT_SEL 1>;
-            key-positions = <7 36>;
+            key-positions = <7 35>;
         };
 
         BT3 {
             bindings = <&bt BT_SEL 2>;
-            key-positions = <8 36>;
+            key-positions = <8 35>;
         };
 
         BT4 {
             bindings = <&bt BT_SEL 3>;
-            key-positions = <9 36>;
+            key-positions = <9 35>;
         };
 
         HANGUL {
