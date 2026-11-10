@@ -185,7 +185,7 @@
 
         BTCLR {
             bindings = <&bt BT_CLR>;
-            key-positions = <19 36>;
+            key-positions = <19 35>;
         };
 
         FLUENT {
