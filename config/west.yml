@@ -15,7 +15,7 @@ manifest:
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: makeyouhigh
-      revision: stable
+      revision: 3557a3990e896864796b4cee59744bbb7e7ecf0f
     - name: zmk-raw-hid # <-- Raw HID module
       remote: zzeneg
       revision: main

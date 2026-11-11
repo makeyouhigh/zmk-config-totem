@@ -57,6 +57,13 @@
     combos {
         compatible = "zmk,combos";
 
+        SCREEN_ROTATE {
+            timeout-ms = <50>;
+            key-positions = <9 19 30>;
+            bindings = <&SCREEN_ROTATE>;
+            slow-release;
+        };
+
         LSYSLD {
             timeout-ms = <50>;
             key-positions = <34 4>;
@@ -331,6 +338,12 @@
     };
 
     behaviors {
+        SCREEN_ROTATE: screen_rotate {
+            compatible = "zmk,behavior-screen-rotate";
+            #binding-cells = <0>;
+            label = "SCREEN_ROTATE";
+            display-name = "Screen Rotate";
+        };
     };
 
     keymap {
