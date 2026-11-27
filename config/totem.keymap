@@ -29,8 +29,6 @@
 #define FN 5
 #define ALLOW 6
 #define SYS 7
-#define RDP 8
-#define RDP_SYM 9
 
 &mt {
     quick-tap-ms = <100>;
@@ -128,7 +126,6 @@
         COMBO_UNDERSOCRE {
             bindings = <&kp UNDER>;
             key-positions = <6 16>;
-            layers = <ALPHA ARROW NUM MOUSE SYM FN ALLOW SYS>;
         };
 
         COMBO_EQUAL {
@@ -139,19 +136,16 @@
         COMBO_PLUS {
             bindings = <&kp PLUS>;
             key-positions = <18 8>;
-            layers = <ALPHA ARROW NUM MOUSE SYM FN ALLOW SYS>;
         };
 
         COMBO_LPAR {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <3 13>;
-            layers = <ALPHA ARROW NUM MOUSE SYM FN ALLOW SYS>;
         };
 
         COMBO_RPAR {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <4 14>;
-            layers = <ALPHA ARROW NUM MOUSE SYM FN ALLOW SYS>;
         };
 
         COMBO_LBKT {
@@ -222,37 +216,6 @@
         FS_WIN_2 {
             bindings = <&kp LC(LA(LS(T)))>;
             key-positions = <6 7>;
-        };
-
-        // ---- RDP 모드 (Tab 엄지 + R 로 토글) ----
-        RDP_TOGGLE {
-            timeout-ms = <50>;
-            key-positions = <34 3>;
-            bindings = <&tog RDP>;
-        };
-
-        RDP_UNDERSCORE {
-            bindings = <&sft MINUS>;
-            key-positions = <6 16>;
-            layers = <RDP RDP_SYM>;
-        };
-
-        RDP_PLUS {
-            bindings = <&sft EQUAL>;
-            key-positions = <18 8>;
-            layers = <RDP RDP_SYM>;
-        };
-
-        RDP_LPAR {
-            bindings = <&sft N9>;
-            key-positions = <3 13>;
-            layers = <RDP RDP_SYM>;
-        };
-
-        RDP_RPAR {
-            bindings = <&sft N0>;
-            key-positions = <4 14>;
-            layers = <RDP RDP_SYM>;
         };
     };
 
@@ -359,20 +322,6 @@
     };
 
     macros {
-        // RDP용: Shift 누름 -> 15ms -> 키 -> 15ms -> Shift 뗌 (RDP 모드 레이어에서만 사용)
-        sft: shifted_key {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-
         WINMINIMIZE: winminimize {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -382,16 +331,6 @@
     };
 
     behaviors {
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        // RDP 모드(8) + SYM(4) 동시 활성 -> RDP_SYM(9)
-        rdp_sym {
-            if-layers = <SYM RDP>;
-            then-layer = <RDP_SYM>;
-        };
     };
 
     keymap {
@@ -474,30 +413,6 @@
             &kp F23       &kp F24       &none         &none         &out OUT_TOG     &none  &none  &none  &none  &none
 &bt BT_CLR  &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(LA(V))    &none  &none  &none  &none  &none  &none
                                         &bootloader   &soft_off     &none            &none  &none  &none
-            >;
-        };
-
-        // RDP 모드 표시용 레이어: 전부 투명(아래 레이어가 그대로 보임).
-        // 이 레이어가 켜진 상태에서 SYM(4)에 들어가면 아래 conditional_layers가 RDP_SYM(9)을 자동으로 켬
-        RDP_layer {
-            label = "RDP";
-            bindings = <
-           &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-           &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans     &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        // RDP_SYM: SYM과 같은 배치. &sft 뒤는 Shift 없는 기본 키
-        //   GRAVE=~  N7=&  N8=*  N9=(  N0=)  N4=$  N5=%  N6=^  N1=!  N2=@  N3=#
-        RDP_SYM_layer {
-            label = "RDP_SYM";
-            bindings = <
-       &sft GRAVE         &sft N7    &sft N8  &sft N9  &sft N0    &sft GRAVE         &sft N7    &sft N8  &sft N9  &sft N0
-       &kp LEFT_BRACKET   &sft N4       &sft N5   &sft N6             &kp MINUS                 &kp LEFT_BRACKET   &sft N4       &sft N5   &sft N6             &kp MINUS
-&none  &kp RIGHT_BRACKET  &sft N1  &sft N2   &sft N3              &kp NON_US_BACKSLASH      &kp RIGHT_BRACKET  &sft N1  &sft N2   &sft N3              &kp NON_US_BACKSLASH   &none
-                                            &none          &none                  &none                     &none              &none             &none
             >;
         };
     };
