@@ -232,25 +232,25 @@
         };
 
         RDP_UNDERSCORE {
-            bindings = <&sft UNDER>;
+            bindings = <&sft MINUS>;
             key-positions = <6 16>;
             layers = <RDP RDP_SYM>;
         };
 
         RDP_PLUS {
-            bindings = <&sft PLUS>;
+            bindings = <&sft EQUAL>;
             key-positions = <18 8>;
             layers = <RDP RDP_SYM>;
         };
 
         RDP_LPAR {
-            bindings = <&sft LEFT_PARENTHESIS>;
+            bindings = <&sft N9>;
             key-positions = <3 13>;
             layers = <RDP RDP_SYM>;
         };
 
         RDP_RPAR {
-            bindings = <&sft RIGHT_PARENTHESIS>;
+            bindings = <&sft N0>;
             key-positions = <4 14>;
             layers = <RDP RDP_SYM>;
         };
@@ -489,12 +489,14 @@
             >;
         };
 
+        // RDP_SYM: SYM과 같은 배치. &sft 뒤는 Shift 없는 기본 키
+        //   GRAVE=~  N7=&  N8=*  N9=(  N0=)  N4=$  N5=%  N6=^  N1=!  N2=@  N3=#
         RDP_SYM_layer {
             label = "RDP_SYM";
             bindings = <
-       &sft TILDE         &sft AMPERSAND    &sft ASTERISK  &sft LEFT_PARENTHESIS  &sft RIGHT_PARENTHESIS    &sft TILDE         &sft AMPERSAND    &sft ASTERISK  &sft LEFT_PARENTHESIS  &sft RIGHT_PARENTHESIS
-       &kp LEFT_BRACKET   &sft DOLLAR       &sft PERCENT   &sft CARET             &kp MINUS                 &kp LEFT_BRACKET   &sft DOLLAR       &sft PERCENT   &sft CARET             &kp MINUS
-&none  &kp RIGHT_BRACKET  &sft EXCLAMATION  &sft AT_SIGN   &sft HASH              &kp NON_US_BACKSLASH      &kp RIGHT_BRACKET  &sft EXCLAMATION  &sft AT_SIGN   &sft HASH              &kp NON_US_BACKSLASH   &none
+       &sft GRAVE         &sft N7    &sft N8  &sft N9  &sft N0    &sft GRAVE         &sft N7    &sft N8  &sft N9  &sft N0
+       &kp LEFT_BRACKET   &sft N4       &sft N5   &sft N6             &kp MINUS                 &kp LEFT_BRACKET   &sft N4       &sft N5   &sft N6             &kp MINUS
+&none  &kp RIGHT_BRACKET  &sft N1  &sft N2   &sft N3              &kp NON_US_BACKSLASH      &kp RIGHT_BRACKET  &sft N1  &sft N2   &sft N3              &kp NON_US_BACKSLASH   &none
                                             &none          &none                  &none                     &none              &none             &none
             >;
         };
